@@ -6,7 +6,7 @@
 
         <p v-if="accountError" class="form-text text-danger">Can not get your account information, please try again later</p>
         
-        <table class="table">
+        <table v-if="CheckOutUser" class="table">
             <thead>
                 <th>Sticker</th>
                 <th>NumberOfItems</th>
