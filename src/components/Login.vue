@@ -36,8 +36,8 @@ data(){
     methods:{
         onSubmit(){
             const myFormData={
-                email: this.email,
-                password: this.password
+                CustomerEmail: this.email,
+                CustomerPassword: this.password
             };
             console.log("form data",myFormData)
             axios.post("/Customer/login", myFormData)

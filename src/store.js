@@ -13,7 +13,7 @@ Stickers:[]
 storeTokenInApp(state, myToken){
     state.token=myToken;
 },
-storeTokenInApp(state,myUser){
+storeUserInApp(state,myUser){
     state.user=myUser 
 }
     },
