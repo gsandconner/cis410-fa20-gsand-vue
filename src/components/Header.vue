@@ -11,7 +11,7 @@
         <router-link class="nav-link" to='/Stickers'>Stickers</router-link>
       </li>
             <li class="nav-item">
-        <router-link class="nav-link" to='/Account'>My Account</router-link>
+        <router-link class="nav-link" to='/account'>My Account</router-link>
       </li>
             <li class="nav-item">
         <router-link class="nav-link" to='/signin'>
