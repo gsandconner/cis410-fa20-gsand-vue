@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import routes from './routes.js'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -18,6 +19,10 @@ storeUserInApp(state,myUser){
 },
 storeStickers(state,myStickers){
     state.Stickers=myStickers
+},
+clearAuthData(state){
+    state.token =null;
+    state.user =null;
 }
     },
     actions:{
@@ -28,6 +33,17 @@ storeStickers(state,myStickers){
             commit('storeStickers', myResponse.data)
         })
         .catch(()=>{console.log("ERROR IN GETSTICKER ACTION")})
+        },
+        logout({commit, state}){
+            axios.post("/Customer/logOut",null,{
+                headers:{
+                    Authorization: `Bearer ${state.token}`
+                }
+            });
+            commit('clearAuthData');
+
+            routes.replace("/");
+
         }
     }
 })

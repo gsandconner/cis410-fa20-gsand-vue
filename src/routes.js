@@ -9,12 +9,15 @@ import Stickers from './components/Stickers.vue';
 import NotFound from './components/NotFound.vue';
 import PurchaseCreate from './components/PurchaseCreate.vue';
 import SignUp from './components/SignUp.vue';
-
+import store from './store.js'
 Vue.use(VueRouter);
 
 const routes = [
     {path: '/', component: Home},
-    {path: '/account', component: Account},
+    {path: '/account', component: Account, beforeEnter(to,from,next){
+        if(store.state.token){next()}
+        else{next('/signin')}
+    }},
     {path: '/signin', component: Login},
     {path: '/Stickers', component: Stickers},
     {path: '/Stickers/:ID', component: StickerDetail,
