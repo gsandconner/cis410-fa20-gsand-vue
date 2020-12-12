@@ -25,6 +25,10 @@ export default {
   },
   components:{
     "app-header": Header
+  },
+  created(){
+    console.log("App Created")
+    this.$store.dispatch("getStickers")
   }
 }
 </script>
