@@ -12,12 +12,15 @@
         </div>
 
 
-        <router-link v-if="auth" :to="`/Stickers/${this.$route.params.ID}/Checkout`">
+        <router-link v-if="auth" :to="`/Stickers/${this.$route.params.ID}/purchase`">
         <button type="button" class ="btn btn-success"> Purchase Sticker</button>
         </router-link>
         <router-link v-else :to="`/signin`">
         <button type="button" class ="btn btn-success"> Sign In to Add a Reviewr</button>
         </router-link>
+        <br/>
+        <br/>
+        <router-view></router-view>
     </div>
 </template>
 
