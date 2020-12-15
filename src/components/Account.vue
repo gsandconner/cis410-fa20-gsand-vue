@@ -9,15 +9,15 @@
         <table v-if="CheckOutUser" class="table">
             <thead>
                 <th>Sticker</th>
-                <th>NumberOfItems</th>
-                <th>DateOfOrder</th>
+                <th>Number Of Items</th>
+                <th>Date Of Order</th>
             </thead>
             <tbody>
                 <tr v-for="thisPurchase in CheckOutUser" :key="thisPurchase.CustomerID">
                     <th><router-link :to="`/Stickers/${thisPurchase.ID}`"> 
                     {{thisPurchase.StickerID}}</router-link></th>
                     <th>{{thisPurchase.NumberOfItems}}</th>
-                    <th>{{thisPurchase.DateOfOrder}}</th>
+                    <th>{{thisPurchase.DateofOrder}}</th>
                 </tr>
             </tbody>   
         </table>
